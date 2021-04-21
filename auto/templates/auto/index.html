@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Автомобили{% endblock%}
+
+{% block content %}
+
+<form action="/" method="get">
+    <input type="text" name="q" placeholder="Search..">
+<!--    {% csrf_token %}-->
+    <button type="submit" class="btn btn-primary">Поиск</button>
+</form>
+
+
+<table border="1" cellspacing="0" class="table table-bordered table-striped mt-5">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Марка</th>
+            <th>Модель</th>
+            <th>Год выпуска</th>
+            <th>Тип трансмисии</th>
+            <th>Цвет</th>
+        </tr>
+    </thead>
+    {% for car in object_list %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ car.car_brand}}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.year_of_issue}}</td>
+        <td>{{ car.get_gear_box_display }}</td>
+        <td>{{ car.color }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+
+</body>
+</html>
