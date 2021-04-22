@@ -13,7 +13,7 @@ class Car(models.Model):
                              verbose_name="Цвет кузова")
 
     def __str__(self):
-        return f'{self.car_brand} {self.model}'
+        return f'{self.car_brand} {self.model} {self.year_of_issue}'
 
     class Meta:
         verbose_name = "Машина"

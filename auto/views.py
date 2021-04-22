@@ -30,10 +30,10 @@ class SearchResult(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         object_list = Car.objects.filter(
-            Q(car_brand__icontains=query) |
-            Q(model__icontains=query) |
-            Q(year_of_issue__icontains=query) |
-            Q(gear_box__icontains=query) |
-            Q(color__icontains=query)
+            Q(car_brand__icontains=query)
+            | Q(model__icontains=query)
+            | Q(year_of_issue__icontains=query)
+            | Q(gear_box__icontains=query)
+            | Q(color__icontains=query)
         )
         return object_list

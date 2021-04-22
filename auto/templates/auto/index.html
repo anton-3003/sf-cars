@@ -1,14 +1,18 @@
 {% extends "base.html" %}
-{% block title %}Автомобили{% endblock%}
+{% block title %}Автомобили{% endblock %}
 
 {% block content %}
 
-<form action="/" method="get">
-    <input type="text" name="q" placeholder="Search..">
+<form action="search/" method="get">
+    <input type="text" name="q" placeholder="Марка авто">
+<!--    <input type="text" name="model" placeholder="Модель авто">-->
 <!--    {% csrf_token %}-->
     <button type="submit" class="btn btn-primary">Поиск</button>
 </form>
-
+<!--<option value="">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
+<!--{% for city in cities %}-->
+<!--<option value="{{ car.pk }}">{{ car.car_brand }}</option>-->
+<!--{% endfor %}-->
 
 <table border="1" cellspacing="0" class="table table-bordered table-striped mt-5">
     <thead>
